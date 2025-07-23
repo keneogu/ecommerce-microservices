@@ -26,6 +26,9 @@ management:
   endpoint:
     shutdown:
       enabled=true:
+  tracing:
+    sampling:
+      probability: 1.0
 
 app:
   message: "Hello Order!"
