@@ -48,6 +48,31 @@ management:
   endpoint:
     shutdown:
       enabled: true
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
   tracing:
     sampling:
       probability: 1.0
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCall: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        waitDurationThreshold: 10s
+        failureRateThreshold: 50
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        slidingWindowType: count_based
+    instances:
+      productBreaker:
+        baseConfig: default
+      userBreaker:
+        baseConfig: default
+      orderBreaker:
+        baseConfig: default
