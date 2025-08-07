@@ -9,7 +9,7 @@ import com.ecommerce.order.model.Order;
 import com.ecommerce.order.model.OrderItem;
 import com.ecommerce.order.model.OrderStatus;
 import lombok.RequiredArgsConstructor;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+//import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.stream.function.StreamBridge;
@@ -30,7 +30,7 @@ public class OrderService {
   @Autowired
   OrderRepository orderRepository;
 
-  private  final StreamBridge streamBridge;
+  private final StreamBridge streamBridge;
 
 //  private final RabbitTemplate rabbitTemplate;
 //
