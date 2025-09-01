@@ -36,3 +36,12 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
 
+#KEYCLOAK
+keycloak:
+  admin:
+    username: user
+    password: user
+    server-url: http://localhost:8443
+    realm: ecom-app
+    client-id: admin-cli
+    client-uid: f454ebec-efb6-4bac-b918-6116d522f618
